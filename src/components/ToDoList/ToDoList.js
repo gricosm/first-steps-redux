@@ -1,4 +1,4 @@
-import store from "../services/redux/store"
+import store from "../../services/redux/store"
 import { useEffect, useState } from "react"
 
 const ToDoList = () => {
@@ -8,7 +8,6 @@ const ToDoList = () => {
     useEffect(() => {
         setTask(store.getState().task)
         store.subscribe(()=>{
-            console.log("AQUÍ VA EL STORE", store.getState().task)
             setTask(store.getState().task)
         })
     }, [])
