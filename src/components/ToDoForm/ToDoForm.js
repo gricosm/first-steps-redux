@@ -1,4 +1,5 @@
 import store from "../../services/redux/store"
+import {loginUser} from "../../services/redux/actions/actionCreator"
 
 const ToDoForm = () => {
 
@@ -6,10 +7,7 @@ const ToDoForm = () => {
         
         e.preventDefault() 
 
-        store.dispatch({
-            type: "ADD_NEW_TASK",
-            payload: {"title": e.target.title.value, "textBlock": e.target.textBlock.value}
-        })
+        store.dispatch(loginUser({"title": e.target.title.value, "textBlock": e.target.textBlock.value}))
     }
 
     return(
